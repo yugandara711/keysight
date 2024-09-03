@@ -1,1 +1,3 @@
-dgdhdkjkbv
+whoami
+pwd
+cd

@@ -1,0 +1,4 @@
+ifconfig
+pwd
+echo
+cat

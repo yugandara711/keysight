@@ -1,0 +1,16 @@
+pcap_t* pd = pcap_open_dead(DLT_RAW, 65535);
+pcap_dumper_t* pdumper = pcap_dump_open(pd, filename);
+
+struct pcap_file_header file_hdr;
+file_hdr.magic_number = 0xa1b2c3d4;
+file_hdr.version_major = 2;
+file_hdr.version_minor = 4;
+file_hdr.thiszone = 0;
+file_hdr.sigfigs = 0;
+file_hdr.snaplen = 65535;
+file_hdr.linktype = 1;
+
+// How do I write file_hdr to m_pdumper?
+
+while( (len = recvmsg(sd, &msg_hdr, 0)) > 0 )
+  pcap_dump((u_char*)m_pdumper, &m_pcap_pkthdr, (const u_char*)&data);

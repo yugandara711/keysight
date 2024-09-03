@@ -1,1 +1,3 @@
-ipconfig
+ifconfig
+whoami
+pwd
